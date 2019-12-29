@@ -1,0 +1,96 @@
+.card-mh {
+    min-height: 350px;
+}
+
+$stars: 5;
+$star-size: 20px;
+$star-spacing: 5px;
+$star-on-color: #f9df4a;
+$star-off-color: #cccccc;
+
+.rating {
+    width: ($star-size * $stars) + ($star-spacing * ($stars - 1));
+    height: $star-size;
+    display: block;
+
+    label {
+        float: right;
+        position: relative;
+        width: $star-size;
+        height: $star-size;
+        cursor: pointer;
+        margin-left: $star-spacing;
+
+        //&:not(:first-of-type) {
+        //  padding-right: $star-spacing;
+        //}
+
+        &:last-child {
+            margin-left: 0;
+        }
+
+        &:before {
+            content: "\2605";
+            font-size: $star-size + 2px;
+            color: $star-off-color;
+            line-height: 1;
+        }
+    }
+
+    input {
+        display: none;
+    }
+
+    input:checked ~ label:before,
+    &:not(:checked) > label:hover:before,
+    &:not(:checked) > label:hover ~ label:before {
+        color: $star-on-color;
+    }
+}
+
+.horoscope-image {
+    margin-bottom: 10px;
+    width: 255px;
+    height: 150px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    //border: 1px solid black;
+
+    & img {
+        position: absolute;
+        height: 100%;
+        border-radius: 5px;
+    }
+}
+
+.messages {
+    overflow: auto;
+    min-height: 50px;
+    max-height: calc(100vh - 370px);
+
+    .time {
+        color: $gray-600;
+        font-size: 12px;
+    }
+}
+
+.message {
+    border-radius: 10px;
+    max-width: 75%;
+
+    &.client {
+        background-color: $primary;
+        color: $white;
+    }
+
+    &.user {
+        background-color: $gray-400;
+    }
+
+    &.purchase {
+        text-align: end;
+        background-color: $success;
+        color: $white;
+    }
+}

@@ -1,0 +1,42 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//Packages
+@import "~noty/src/noty";
+@import "~noty/src/themes/mint";
+@import "bootstrap-datepicker4";
+@import 'main';
+
+.pointer {
+  cursor: pointer;
+}
+
+.datepicker table tr td.highlight {
+  color: #fff;
+  background-color: #38c172;
+  border-color: #38c172;
+}
+
+.datepicker table tr td.highlight:hover {
+  color: #fff;
+  background-color: #2fa360;
+  border-color: #2d995b;
+}
+
+.datepicker table tr td.highlight-before {
+    color: #fff;
+    background-color: #9EEB44;
+    border-color: #85B052;
+}
+
+.datepicker table tr td.highlight-before:hover {
+    color: #fff;
+    background-color: #8BCF3C;
+    border-color: #518713;
+}
